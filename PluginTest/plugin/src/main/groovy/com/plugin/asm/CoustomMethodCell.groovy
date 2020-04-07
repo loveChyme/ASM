@@ -1,0 +1,37 @@
+package com.plugin.asm
+
+class CoustomMethodCell {
+    // 方法名名
+    String name
+    // 原方法描述
+    String desc
+    // 方法所在接口或类
+    String parent
+    // 采集数据的方法名
+    String agentName
+    // 采集数据的方法描述
+    String agentDesc
+    // 采集数据的方法参数起始索引（0：this 1+：普通参数）
+    int paramsStart
+    // 采集数据参数个数
+    int paramsCount
+    // 参数类型对应的ASM指令，加载不同类型的参数需要不同指令
+    List<Integer> opcodes
+
+    CoustomMethodCell(String name, String desc, String agentName) {
+        this.name = name
+        this.desc = desc
+        this.agentName = agentName
+    }
+
+    CoustomMethodCell(String name, String desc, String parent, String agentName, String agentDesc, int paramsStart, int paramsCount, List<Integer> opcodes) {
+        this.name = name
+        this.desc = desc
+        this.agentName = agentName
+        this.parent = parent
+        this.paramsCount = paramsCount
+        this.paramsStart = paramsStart
+        this.opcodes = opcodes
+        this.agentDesc = agentDesc
+    }
+}

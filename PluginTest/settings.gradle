@@ -1,0 +1,2 @@
+include ':app', ':plugin', ':logsdk'
+rootProject.name='My Application'
